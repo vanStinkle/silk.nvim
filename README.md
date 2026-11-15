@@ -2,9 +2,6 @@
 
 A low contrast colorscheme inspired by the dwm/dmenu default colors and [alabaster](https://github.com/tonsky/sublime-scheme-alabaster)'s highlighting philosophy. In syntax, only global definitions, comments, strings, and statically known constants are colored. Everything else stays plain.
 
-![screenshot](screenshot.png)
-
-![palette](palette.png)
 
 ## Install
 
