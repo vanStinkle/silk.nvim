@@ -2,6 +2,8 @@
 
 A low contrast colorscheme inspired by the dwm/dmenu default colors.
 
+![screenshot](screenshot.png)
+
 ![palette](palette.png)
 
 ## Install
