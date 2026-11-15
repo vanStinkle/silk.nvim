@@ -3,3 +3,13 @@
 A low contrast colorscheme inspired by the dwm/dmenu default colors.
 
 ![palette](palette.png)
+
+## Install
+
+With `vim.pack`:
+```lua
+vim.pack.add({ "https://github.com/vanStinkle/silk.nvim" })
+vim.cmd.colorscheme("silk")
+
+
+```
