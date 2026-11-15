@@ -43,9 +43,9 @@ function M.load()
   set("Visual",        { bg = c.g1 })
   set("VisualNOS",     { link = "Visual" })
   set("MatchParen",    { bg = c.g2, fg = c.g5 })
-  set("Search",        { bg = c.yellow0, fg = c.bg })
-  set("IncSearch",     { bg = c.yellow0, fg = c.bg })
-  set("CurSearch",     { bg = c.yellow1, fg = c.bg })
+  set("Search",        { bg = c.orange0, fg = c.bg })
+  set("IncSearch",     { bg = c.orange0, fg = c.bg })
+  set("CurSearch",     { bg = c.orange1, fg = c.bg })
   set("Substitute",    { bg = c.red0, fg = c.bg })
   set("QuickFixLine",  { bg = c.g1 })
 
@@ -84,7 +84,7 @@ function M.load()
   set("MoreMsg",     { fg = c.green0 })
   set("Question",    { fg = c.green0 })
   set("OkMsg",       { fg = c.green0 })
-  set("WarningMsg",  { fg = c.yellow0 })
+  set("WarningMsg",  { fg = c.orange0 })
   set("ErrorMsg",    { fg = c.red0 })
   set("WildMenu",    { link = "PmenuSel" })
 
@@ -108,13 +108,13 @@ function M.load()
   set("DiffDelete",  { fg = c.red0, bg = c.g0 })
   set("DiffText",    { fg = c.g5, bg = c.g2 })
   set("Added",       { fg = c.green0 })
-  set("Changed",     { fg = c.yellow0 })
+  set("Changed",     { fg = c.orange0 })
   set("Removed",     { fg = c.red0 })
 
 
   -- spell
   set("SpellBad",    { undercurl = true, sp = c.red0 })
-  set("SpellCap",    { undercurl = true, sp = c.yellow0 })
+  set("SpellCap",    { undercurl = true, sp = c.orange0 })
   set("SpellRare",   { undercurl = true, sp = c.peri0 })
   set("SpellLocal",  { undercurl = true, sp = c.teal0 })
 
@@ -122,7 +122,7 @@ function M.load()
   -- diagnostics
   local diagnostics = {
     Error = c.red0,
-    Warn  = c.yellow0,
+    Warn  = c.orange0,
     Info  = c.blue0,
     Hint  = c.teal0,
     Ok    = c.green0,
@@ -176,8 +176,8 @@ function M.load()
 
 
   -- colored
-  set("Comment",   { fg = c.yellow1 })
-  set("Todo",      { fg = c.bg, bg = c.yellow1 })
+  set("Comment",   { fg = c.orange0 })
+  set("Todo",      { fg = c.bg, bg = c.orange1 })
 
   set("String",    { fg = c.green0 })
   set("Character", { link = "String" })
@@ -234,8 +234,8 @@ function M.load()
 
   -- terminal
   local terminal = {
-    c.g0, c.red0, c.green0, c.yellow0, c.blue0, c.peri0, c.teal0, c.fg,
-    c.g1, c.red1, c.green1, c.yellow1, c.blue1, c.peri1, c.teal1, c.g5,
+    c.g0, c.red0, c.green0, c.orange0, c.blue0, c.peri0, c.teal0, c.fg,
+    c.g1, c.red1, c.green1, c.orange1, c.blue1, c.peri1, c.teal1, c.g5,
   }
 
   for i, color in ipairs(terminal) do
