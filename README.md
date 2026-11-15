@@ -10,6 +10,4 @@ With `vim.pack`:
 ```lua
 vim.pack.add({ "https://github.com/vanStinkle/silk.nvim" })
 vim.cmd.colorscheme("silk")
-
-
 ```
