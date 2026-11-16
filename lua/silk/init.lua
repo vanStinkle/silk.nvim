@@ -1,5 +1,3 @@
-local c = require("silk.palette")
-
 local m = {}
 
 local function set(name, opts)
@@ -7,13 +5,10 @@ local function set(name, opts)
 end
 
 function m.load()
-
+  local c = require("silk.palette")[vim.o.background]
   vim.cmd("highlight clear")
   vim.cmd("syntax reset")
-
-  vim.o.background = "dark"
   vim.g.colors_name = "silk"
-
 
 
   -- ui
