@@ -1,19 +1,18 @@
-local c = require("silk.palette")[vim.o.background]
+local palette = require("silk.palette")
+local c = palette[vim.o.background] or palette.dark
 
-local function mode(color)
-  return {
-    a = { fg = color, bg = c.bg, gui = "bold" },
-    b = { fg = c.fg, bg = c.g0 },
-    c = { fg = c.fg, bg = c.bg },
-  }
-end
+local mode = {
+  a = { fg = c.g5, bg = c.bg_blue, gui = "bold" },
+  b = { fg = c.fg, bg = c.bg },
+  c = { fg = c.fg, bg = c.bg },
+}
 
 return {
-  normal   = mode(c.blue),
-  insert   = mode(c.green),
-  visual   = mode(c.peri),
-  replace  = mode(c.red),
-  command  = mode(c.yellow),
+  normal   = mode,
+  insert   = mode,
+  visual   = mode,
+  replace  = mode,
+  command  = mode,
 
   inactive = {
     a = { fg = c.g4, bg = c.bg },

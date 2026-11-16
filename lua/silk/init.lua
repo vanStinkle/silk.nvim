@@ -5,10 +5,15 @@ local function set(name, opts)
 end
 
 function m.load()
-  local c = require("silk.palette")[vim.o.background]
+
+  local palette = require("silk.palette")
+  local c = palette[vim.o.background] or palette.dark
+
   vim.cmd("highlight clear")
   vim.cmd("syntax reset")
+
   vim.g.colors_name = "silk"
+
 
 
   -- ui
@@ -39,9 +44,9 @@ function m.load()
   set("visualnos",     { link = "visual" })
   set("matchparen",    { bg = c.g2, fg = c.g5 })
   set("search",        { bg = c.g2, fg = c.g5 })
-  set("incsearch",     { bg = c.yellow, fg = c.bg })
-  set("cursearch",     { bg = c.yellow, fg = c.bg })
-  set("substitute",    { bg = c.red, fg = c.bg })
+  set("incsearch",     { bg = c.bg_blue, fg = c.g5 })
+  set("cursearch",     { bg = c.bg_blue, fg = c.g5 })
+  set("substitute",    { bg = c.bg_blue, fg = c.g5 })
   set("quickfixline",  { bg = c.g1 })
 
   set("directory",     { fg = c.teal })
@@ -70,7 +75,7 @@ function m.load()
   set("vertsplit",         { fg = c.g3 })
   set("winseparator",      { link = "vertsplit" })
   set("tabline",           { bg = c.g0, fg = c.g4 })
-  set("tablinesel",        { bg = c.bg, fg = c.g5 })
+  set("tablinesel",        { bg = c.bg_blue, fg = c.g5 })
   set("tablinefill",       { bg = c.g0 })
 
 
@@ -86,13 +91,13 @@ function m.load()
 
   -- popup
   set("pmenu",          { bg = c.g0, fg = c.fg })
-  set("pmenusel",       { bg = c.g1, fg = c.g5 })
+  set("pmenusel",       { bg = c.bg_blue, fg = c.g5 })
   set("pmenukind",      { link = "pmenu" })
   set("pmenukindsel",   { link = "pmenusel" })
   set("pmenuextra",     { bg = c.g0, fg = c.g4 })
-  set("pmenuextrasel",  { bg = c.g1, fg = c.g4 })
+  set("pmenuextrasel",  { bg = c.bg_blue, fg = c.g5 })
   set("pmenumatch",     { bg = c.g0, fg = c.g5, bold = true })
-  set("pmenumatchsel",  { bg = c.g1, fg = c.g5, bold = true })
+  set("pmenumatchsel",  { bg = c.bg_blue, fg = c.g5, bold = true })
   set("pmenusbar",      { bg = c.g0 })
   set("pmenuthumb",     { bg = c.g3 })
 
@@ -176,7 +181,7 @@ function m.load()
 
   -- colored
   set("comment",   { fg = c.rust })
-  set("todo",      { fg = c.bg, bg = c.yellow })
+  set("todo",      { fg = c.g5, bg = c.bg_blue })
 
   set("string",    { fg = c.green })
   set("character", { link = "string" })
