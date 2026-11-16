@@ -1,12 +1,12 @@
 local c = require("silk.palette")
 
-local M = {}
+local m = {}
 
 local function set(name, opts)
   vim.api.nvim_set_hl(0, name, opts)
 end
 
-function M.load()
+function m.load()
 
   vim.cmd("highlight clear")
   vim.cmd("syntax reset")
@@ -17,154 +17,158 @@ function M.load()
 
 
   -- ui
-  set("Normal",        { bg = c.bg, fg = c.fg })
-  set("NormalNC",      { link = "Normal" })
-  set("NormalFloat",   { link = "Normal" })
-  set("FloatBorder",   { link = "Normal" })
-  set("FloatTitle",    { fg = c.g5 })
-  set("FloatFooter",   { fg = c.g4 })
-  set("MsgArea",       { link = "Normal" })
-  set("MsgSeparator",  { fg = c.g3 })
-  set("EndOfBuffer",   { fg = c.bg })
-  set("NonText",       { fg = c.g2 })
-  set("Whitespace",    { fg = c.g2 })
-  set("SpecialKey",    { fg = c.g2 })
-  set("Conceal",       { fg = c.g3 })
+  set("normal",        { bg = c.bg, fg = c.fg })
+  set("normalnc",      { link = "normal" })
+  set("normalfloat",   { link = "normal" })
+  set("floatborder",   { link = "normal" })
+  set("floattitle",    { fg = c.g5 })
+  set("floatfooter",   { fg = c.g4 })
+  set("msgarea",       { link = "normal" })
+  set("msgseparator",  { fg = c.g3 })
+  set("endofbuffer",   { fg = c.bg })
+  set("nontext",       { fg = c.g2 })
+  set("whitespace",    { fg = c.g2 })
+  set("specialkey",    { fg = c.g2 })
+  set("conceal",       { fg = c.g3 })
 
-  set("Cursor",        { fg = c.bg, bg = c.fg })
-  set("lCursor",       { link = "Cursor" })
-  set("CursorIM",      { link = "Cursor" })
-  set("TermCursor",    { link = "Cursor" })
-  set("TermCursorNC",  { fg = c.bg, bg = c.g3 })
-  set("CursorLine",    { bg = c.g0 })
-  set("CursorColumn",  { bg = c.g0 })
-  set("ColorColumn",   { bg = c.g0 })
+  set("cursor",        { fg = c.bg, bg = c.fg })
+  set("lcursor",       { link = "cursor" })
+  set("cursorim",      { link = "cursor" })
+  set("termcursor",    { link = "cursor" })
+  set("termcursornc",  { fg = c.bg, bg = c.g3 })
+  set("cursorline",    { bg = c.g0 })
+  set("cursorcolumn",  { bg = c.g0 })
+  set("colorcolumn",   { bg = c.g0 })
 
-  set("Visual",        { bg = c.g1 })
-  set("VisualNOS",     { link = "Visual" })
-  set("MatchParen",    { bg = c.g2, fg = c.g5 })
-  set("Search",        { bg = c.orange0, fg = c.bg })
-  set("IncSearch",     { bg = c.orange0, fg = c.bg })
-  set("CurSearch",     { bg = c.orange1, fg = c.bg })
-  set("Substitute",    { bg = c.red0, fg = c.bg })
-  set("QuickFixLine",  { bg = c.g1 })
+  set("visual",        { bg = c.g1 })
+  set("visualnos",     { link = "visual" })
+  set("matchparen",    { bg = c.g2, fg = c.g5 })
+  set("search",        { bg = c.g2, fg = c.g5 })
+  set("incsearch",     { bg = c.yellow, fg = c.bg })
+  set("cursearch",     { bg = c.yellow, fg = c.bg })
+  set("substitute",    { bg = c.red, fg = c.bg })
+  set("quickfixline",  { bg = c.g1 })
 
-  set("Directory",     { fg = c.teal0 })
-  set("Title",         { fg = c.g5, bold = true })
+  set("directory",     { fg = c.teal })
+  set("title",         { fg = c.g5, bold = true })
 
 
   -- gutter
-  set("LineNr",          { fg = c.g3 })
-  set("LineNrAbove",     { link = "LineNr" })
-  set("LineNrBelow",     { link = "LineNr" })
-  set("CursorLineNr",    { bg = c.g0, fg = c.g5 })
-  set("CursorLineSign",  { bg = c.g0 })
-  set("CursorLineFold",  { bg = c.g0, fg = c.g3 })
-  set("SignColumn",      { bg = c.bg })
-  set("FoldColumn",      { fg = c.g3 })
-  set("Folded",          { fg = c.g4 })
+  set("linenr",          { fg = c.g3 })
+  set("linenrabove",     { link = "linenr" })
+  set("linenrbelow",     { link = "linenr" })
+  set("cursorlinenr",    { bg = c.g0, fg = c.g5 })
+  set("cursorlinesign",  { bg = c.g0 })
+  set("cursorlinefold",  { bg = c.g0, fg = c.g3 })
+  set("signcolumn",      { bg = c.bg })
+  set("foldcolumn",      { fg = c.g3 })
+  set("folded",          { fg = c.g4 })
 
 
   -- bars
-  set("StatusLine",        { bg = c.bg, fg = c.fg })
-  set("StatusLineNC",      { bg = c.bg, fg = c.g4 })
-  set("StatusLineTerm",    { link = "StatusLine" })
-  set("StatusLineTermNC",  { link = "StatusLineNC" })
-  set("WinBar",            { bg = c.bg, fg = c.fg })
-  set("WinBarNC",          { bg = c.bg, fg = c.g4 })
-  set("VertSplit",         { fg = c.g3 })
-  set("WinSeparator",      { link = "VertSplit" })
-  set("TabLine",           { bg = c.g0, fg = c.g4 })
-  set("TabLineSel",        { bg = c.bg, fg = c.g5 })
-  set("TabLineFill",       { bg = c.g0 })
+  set("statusline",        { bg = c.bg, fg = c.fg })
+  set("statuslinenc",      { bg = c.bg, fg = c.g4 })
+  set("statuslineterm",    { link = "statusline" })
+  set("statuslinetermnc",  { link = "statuslinenc" })
+  set("winbar",            { bg = c.bg, fg = c.fg })
+  set("winbarnc",          { bg = c.bg, fg = c.g4 })
+  set("vertsplit",         { fg = c.g3 })
+  set("winseparator",      { link = "vertsplit" })
+  set("tabline",           { bg = c.g0, fg = c.g4 })
+  set("tablinesel",        { bg = c.bg, fg = c.g5 })
+  set("tablinefill",       { bg = c.g0 })
 
 
   -- messages
-  set("ModeMsg",     { fg = c.fg })
-  set("MoreMsg",     { fg = c.green0 })
-  set("Question",    { fg = c.green0 })
-  set("OkMsg",       { fg = c.green0 })
-  set("WarningMsg",  { fg = c.orange0 })
-  set("ErrorMsg",    { fg = c.red0 })
-  set("WildMenu",    { link = "PmenuSel" })
+  set("modemsg",     { fg = c.fg })
+  set("moremsg",     { fg = c.fg })
+  set("question",    { fg = c.fg })
+  set("okmsg",       { fg = c.green })
+  set("warningmsg",  { fg = c.yellow })
+  set("errormsg",    { fg = c.red })
+  set("wildmenu",    { link = "pmenusel" })
 
 
   -- popup
-  set("Pmenu",          { bg = c.g0, fg = c.fg })
-  set("PmenuSel",       { bg = c.g1, fg = c.g5 })
-  set("PmenuKind",      { link = "Pmenu" })
-  set("PmenuKindSel",   { link = "PmenuSel" })
-  set("PmenuExtra",     { bg = c.g0, fg = c.g4 })
-  set("PmenuExtraSel",  { bg = c.g1, fg = c.g4 })
-  set("PmenuMatch",     { bg = c.g0, fg = c.g5, bold = true })
-  set("PmenuMatchSel",  { bg = c.g1, fg = c.g5, bold = true })
-  set("PmenuSbar",      { bg = c.g0 })
-  set("PmenuThumb",     { bg = c.g3 })
+  set("pmenu",          { bg = c.g0, fg = c.fg })
+  set("pmenusel",       { bg = c.g1, fg = c.g5 })
+  set("pmenukind",      { link = "pmenu" })
+  set("pmenukindsel",   { link = "pmenusel" })
+  set("pmenuextra",     { bg = c.g0, fg = c.g4 })
+  set("pmenuextrasel",  { bg = c.g1, fg = c.g4 })
+  set("pmenumatch",     { bg = c.g0, fg = c.g5, bold = true })
+  set("pmenumatchsel",  { bg = c.g1, fg = c.g5, bold = true })
+  set("pmenusbar",      { bg = c.g0 })
+  set("pmenuthumb",     { bg = c.g3 })
 
 
   -- diff
-  set("DiffAdd",     { fg = c.green0, bg = c.g0 })
-  set("DiffChange",  { bg = c.g0 })
-  set("DiffDelete",  { fg = c.red0, bg = c.g0 })
-  set("DiffText",    { fg = c.g5, bg = c.g2 })
-  set("Added",       { fg = c.green0 })
-  set("Changed",     { fg = c.orange0 })
-  set("Removed",     { fg = c.red0 })
+  set("diffadd",     { fg = c.green, bg = c.g0 })
+  set("diffchange",  { bg = c.g0 })
+  set("diffdelete",  { fg = c.red, bg = c.g0 })
+  set("difftext",    { fg = c.g5, bg = c.g2 })
+  set("added",       { fg = c.green })
+  set("changed",     { fg = c.yellow })
+  set("removed",     { fg = c.red })
 
 
   -- spell
-  set("SpellBad",    { undercurl = true, sp = c.red0 })
-  set("SpellCap",    { undercurl = true, sp = c.orange0 })
-  set("SpellRare",   { undercurl = true, sp = c.peri0 })
-  set("SpellLocal",  { undercurl = true, sp = c.teal0 })
+  set("spellbad",    { undercurl = true, sp = c.red })
+  set("spellcap",    { undercurl = true, sp = c.yellow })
+  set("spellrare",   { link = "spellcap" })
+  set("spelllocal",  { link = "spellcap" })
 
 
   -- diagnostics
   local diagnostics = {
-    Error = c.red0,
-    Warn  = c.orange0,
-    Info  = c.blue0,
-    Hint  = c.teal0,
-    Ok    = c.green0,
+    error = c.red,
+    warn  = c.yellow,
+    info  = c.blue,
+    hint  = c.teal,
+    ok    = c.green,
   }
 
   for name, color in pairs(diagnostics) do
-    set("Diagnostic" .. name,            { fg = color })
-    set("DiagnosticVirtualText" .. name, { fg = color })
-    set("DiagnosticFloating" .. name,    { fg = color })
-    set("DiagnosticSign" .. name,        { fg = color })
-    set("DiagnosticUnderline" .. name,   { undercurl = true, sp = color })
+    set("diagnostic" .. name,            { fg = color })
+    set("diagnosticvirtualtext" .. name, { fg = color })
+    set("diagnosticfloating" .. name,    { fg = color })
+    set("diagnosticsign" .. name,        { fg = color })
+    set("diagnosticunderline" .. name,   { undercurl = true, sp = color })
   end
 
-  set("DiagnosticDeprecated",   { strikethrough = true, sp = c.red0 })
-  set("DiagnosticUnnecessary",  { fg = c.g3 })
+  for _, name in ipairs({ "info", "hint", "ok" }) do
+    set("diagnosticvirtualtext" .. name, { fg = c.g4 })
+  end
+
+  set("diagnosticdeprecated",   { strikethrough = true, sp = c.red })
+  set("diagnosticunnecessary",  { fg = c.g3 })
 
 
   -- syntax
   local plain = {
-    "Identifier",
-    "Statement",
-    "Conditional",
-    "Repeat",
-    "Label",
-    "Operator",
-    "Keyword",
-    "Exception",
-    "PreProc",
-    "Include",
-    "Define",
-    "Macro",
-    "PreCondit",
-    "Type",
-    "StorageClass",
-    "Structure",
-    "Typedef",
-    "Special",
-    "SpecialChar",
-    "Tag",
-    "Delimiter",
-    "SpecialComment",
-    "Debug",
+    "identifier",
+    "statement",
+    "conditional",
+    "repeat",
+    "label",
+    "operator",
+    "keyword",
+    "exception",
+    "preproc",
+    "include",
+    "define",
+    "macro",
+    "precondit",
+    "type",
+    "storageclass",
+    "structure",
+    "typedef",
+    "special",
+    "specialchar",
+    "tag",
+    "delimiter",
+    "specialcomment",
+    "debug",
     "@variable",
     "@function.call",
     "@function.method.call",
@@ -176,66 +180,65 @@ function M.load()
 
 
   -- colored
-  set("Comment",   { fg = c.orange0 })
-  set("Todo",      { fg = c.bg, bg = c.orange1 })
+  set("comment",   { fg = c.rust })
+  set("todo",      { fg = c.bg, bg = c.yellow })
 
-  set("String",    { fg = c.green0 })
-  set("Character", { link = "String" })
+  set("string",    { fg = c.green })
+  set("character", { link = "string" })
 
-  set("Constant",  { fg = c.peri0 })
-  set("Number",    { link = "Constant" })
-  set("Boolean",   { link = "Constant" })
-  set("Float",     { link = "Constant" })
+  set("constant",  { fg = c.peri })
+  set("number",    { link = "constant" })
+  set("boolean",   { link = "constant" })
+  set("float",     { link = "constant" })
 
-  set("Function",  { fg = c.blue0 })
+  set("function",  { fg = c.blue })
 
   -- misc
-  set("Error",       { fg = c.red0, underline = true })
-  set("Underlined",  { fg = c.blue1, underline = true })
+  set("error",       { fg = c.red, underline = true })
+  set("underlined",  { fg = c.blue, underline = true })
 
 
   -- treesitter
-  set("@constant.builtin",  { link = "Constant" })
-  set("@string.escape",     { fg = c.green1 })
-  set("@string.regexp",     { link = "String" })
+  set("@constant.builtin",  { link = "constant" })
+  set("@string.escape",     { link = "constant" })
+  set("@string.regexp",     { link = "string" })
 
-  set("@markup.heading",       { link = "Title" })
+  set("@markup.heading",       { link = "title" })
   set("@markup.strong",        { bold = true })
   set("@markup.italic",        { fg = c.g5 })
   set("@markup.strikethrough", { strikethrough = true })
   set("@markup.underline",     { underline = true })
   set("@markup.link",          { fg = c.g4 })
   set("@markup.link.label",    { fg = c.fg })
-  set("@markup.link.url",      { link = "Underlined" })
-  set("@markup.raw",           { link = "String" })
-  set("@markup.raw.block",     { link = "String" })
+  set("@markup.link.url",      { link = "underlined" })
+  set("@markup.raw",           { link = "string" })
+  set("@markup.raw.block",     { fg = c.fg })
   set("@markup.list",          { fg = c.g4 })
   set("@markup.quote",         { fg = c.g4 })
 
 
   -- lsp
-  set("LspReferenceText",   { bg = c.g1 })
-  set("LspReferenceRead",   { bg = c.g1 })
-  set("LspReferenceWrite",  { bg = c.g1 })
-  set("LspReferenceTarget", { bg = c.g1 })
-  set("LspInlayHint",       { fg = c.g3 })
-  set("LspCodeLens",        { fg = c.g3 })
-  set("LspCodeLensSeparator", { fg = c.g2 })
-  set("LspSignatureActiveParameter", { fg = c.g5, underline = true })
+  set("lspreferencetext",   { bg = c.g1 })
+  set("lspreferenceread",   { bg = c.g1 })
+  set("lspreferencewrite",  { bg = c.g1 })
+  set("lspreferencetarget", { bg = c.g1 })
+  set("lspinlayhint",       { fg = c.g3 })
+  set("lspcodelens",        { fg = c.g3 })
+  set("lspcodelensseparator", { fg = c.g2 })
+  set("lspsignatureactiveparameter", { fg = c.g5, underline = true })
 
   -- semantic tokens
   set("@lsp.type.function",                { })
   set("@lsp.type.method",                  { })
-  set("@lsp.typemod.function.declaration", { fg = c.blue0 })
-  set("@lsp.typemod.method.declaration",   { fg = c.blue0 })
-  set("@lsp.type.enumMember",              { link = "Constant" })
-  set("@lsp.typemod.variable.readonly",    { link = "Constant" })
+  set("@lsp.typemod.function.declaration", { fg = c.blue })
+  set("@lsp.typemod.method.declaration",   { fg = c.blue })
+  set("@lsp.type.enummember",              { link = "constant" })
 
 
   -- terminal
   local terminal = {
-    c.g0, c.red0, c.green0, c.orange0, c.blue0, c.peri0, c.teal0, c.fg,
-    c.g1, c.red1, c.green1, c.orange1, c.blue1, c.peri1, c.teal1, c.g5,
+    c.g0, c.red, c.green, c.yellow, c.blue, c.peri, c.teal, c.fg,
+    c.g1, c.red, c.green, c.yellow, c.blue, c.peri, c.teal, c.g5,
   }
 
   for i, color in ipairs(terminal) do
@@ -243,4 +246,4 @@ function M.load()
   end
 end
 
-return M
+return m
