@@ -1,8 +1,8 @@
-local c = require("silk.palette")
+local c = require("silk.palette")[vim.o.background]
 
 local function mode(color)
   return {
-    a = { fg = c.bg, bg = color, gui = "bold" },
+    a = { fg = color, bg = c.bg, gui = "bold" },
     b = { fg = c.fg, bg = c.g0 },
     c = { fg = c.fg, bg = c.bg },
   }
