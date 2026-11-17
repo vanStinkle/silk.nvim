@@ -44,9 +44,9 @@ function m.load()
   set("visualnos",     { link = "visual" })
   set("matchparen",    { bg = c.g2, fg = c.g5 })
   set("search",        { bg = c.g2, fg = c.g5 })
-  set("incsearch",     { bg = c.bg_blue, fg = c.g5 })
-  set("cursearch",     { bg = c.bg_blue, fg = c.g5 })
-  set("substitute",    { bg = c.bg_blue, fg = c.g5 })
+  set("incsearch",     { bg = c.yellow, fg = c.bg })
+  set("cursearch",     { bg = c.yellow, fg = c.bg })
+  set("substitute",    { bg = c.red, fg = c.bg })
   set("quickfixline",  { bg = c.g1 })
 
   set("directory",     { fg = c.teal })
@@ -75,7 +75,7 @@ function m.load()
   set("vertsplit",         { fg = c.g3 })
   set("winseparator",      { link = "vertsplit" })
   set("tabline",           { bg = c.g0, fg = c.g4 })
-  set("tablinesel",        { bg = c.bg_blue, fg = c.g5 })
+  set("tablinesel",        { bg = c.bg, fg = c.g5 })
   set("tablinefill",       { bg = c.g0 })
 
 
@@ -91,13 +91,13 @@ function m.load()
 
   -- popup
   set("pmenu",          { bg = c.g0, fg = c.fg })
-  set("pmenusel",       { bg = c.bg_blue, fg = c.g5 })
+  set("pmenusel",       { bg = c.g1, fg = c.g5 })
   set("pmenukind",      { link = "pmenu" })
   set("pmenukindsel",   { link = "pmenusel" })
   set("pmenuextra",     { bg = c.g0, fg = c.g4 })
-  set("pmenuextrasel",  { bg = c.bg_blue, fg = c.g5 })
+  set("pmenuextrasel",  { bg = c.g1, fg = c.g4 })
   set("pmenumatch",     { bg = c.g0, fg = c.g5, bold = true })
-  set("pmenumatchsel",  { bg = c.bg_blue, fg = c.g5, bold = true })
+  set("pmenumatchsel",  { bg = c.g1, fg = c.g5, bold = true })
   set("pmenusbar",      { bg = c.g0 })
   set("pmenuthumb",     { bg = c.g3 })
 
@@ -181,12 +181,12 @@ function m.load()
 
   -- colored
   set("comment",   { fg = c.rust })
-  set("todo",      { fg = c.g5, bg = c.bg_blue })
+  set("todo",      { fg = c.bg, bg = c.yellow })
 
   set("string",    { fg = c.green })
   set("character", { link = "string" })
 
-  set("constant",  { fg = c.peri })
+  set("constant",  { fg = c.purple })
   set("number",    { link = "constant" })
   set("boolean",   { link = "constant" })
   set("float",     { link = "constant" })
@@ -237,8 +237,8 @@ function m.load()
 
   -- terminal
   local terminal = {
-    c.g0, c.red, c.green, c.yellow, c.blue, c.peri, c.teal, c.fg,
-    c.g1, c.red, c.green, c.yellow, c.blue, c.peri, c.teal, c.g5,
+    c.g0, c.red, c.green, c.yellow, c.blue, c.purple, c.teal, c.fg,
+    c.g1, c.red, c.green, c.yellow, c.blue, c.purple, c.teal, c.g5,
   }
 
   for i, color in ipairs(terminal) do
