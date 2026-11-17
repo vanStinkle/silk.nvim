@@ -12,13 +12,13 @@ return {
     g5        = "#eeeeee",
 
     --chromatic colors
-    red       = "#DB7171",
     rust      = "#c08e5c",
-    yellow    = "#C4A81C",
-    green     = "#7DC066",
-    teal      = "#50C8A6",
-    blue      = "#58B9DF",
-    purple    = "#A68DEC",
+    red       = "#DB7171",
+    yellow    = "#D5BF53",
+    green     = "#6DBD69",
+    teal      = "#5ABFA2",
+    blue      = "#52BBE5",
+    purple    = "#BD9BDF",
 
     --lualine accents
     bg_red    = "#773838",
